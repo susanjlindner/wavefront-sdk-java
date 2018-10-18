@@ -37,7 +37,8 @@ The WavefrontSender interface has two implementations.<br/>
   /* set this if you want to override the default SocketFactory */
   builder.socketFactory(<SocketFactory>);
   
-  /* set this if you want to change the default flush interval of 5 seconds */
+  /* The flushing interval determines how frequently the proxy sends to Wavefront for storage. */
+  /* Set this if you want to change the default flush interval of 5 seconds */
   builder.flushIntervalSeconds(2);
   
   WavefrontProxyClient wavefrontProxyClient = builder.build();
@@ -52,13 +53,14 @@ The WavefrontSender interface has two implementations.<br/>
   WavefrontDirectIngestionClient.Builder builder = 
   new WavefrontDirectIngestionClient.Builder(wavefrontServer, token);
  
-  // set this if you want to change the defualt max queue size of 50,000
+  /* set this if you want to change the defualt max queue size of 50,000 */
   builder.maxQueueSize(100_000);
  
-  // set this if you want to change the default batch size of 10,000
+  /* set this if you want to change the default batch size of 10,000 */
   builder.batchSize(20_000);
  
-  // set this if you want to change the default flush interval value of 1 seconds
+  /* The flushing interval determines how frequently data is sent to Wavefront for storage. */
+  /* set this if you want to change the default flush interval value of 1 seconds */
   builder.flushIntervalSeconds(2);
    
   WavefrontDirectIngestionClient wavefrontDirectIngestionClient = builder.build();
