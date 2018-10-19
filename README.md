@@ -20,7 +20,7 @@ The WavefrontSender interface has two implementations.<br/>
 ### WavefrontProxyClient
 ```java
   /*
-   * Assume you have a running Wavefront proxy listening on at least one of 
+   * Assume you have a running Wavefront proxy listening on at least one of asdf
    * metrics/direct-distribution/tracing ports and you know the proxy hostname
    */
   WavefrontProxyClient.Builder builder = new WavefrontProxyClient.Builder(proxyHost);
